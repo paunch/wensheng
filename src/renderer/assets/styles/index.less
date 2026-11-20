@@ -1,0 +1,648 @@
+@import './reset.less';
+@import './animate.less';
+@import './layout.less';
+
+*, *::after, *::before {
+	-webkit-user-drag: none;
+}
+
+:root {
+  --color-primary: rgb(233, 105, 108);
+  --color-primary-alpha-100: rgba(233, 105, 108, 0.90);
+  --color-primary-alpha-200: rgba(233, 105, 108, 0.80);
+  --color-primary-alpha-300: rgba(233, 105, 108, 0.70);
+  --color-primary-alpha-400: rgba(233, 105, 108, 0.60);
+  --color-primary-alpha-500: rgba(233, 105, 108, 0.50);
+  --color-primary-alpha-600: rgba(233, 105, 108, 0.40);
+  --color-primary-alpha-700: rgba(233, 105, 108, 0.30);
+  --color-primary-alpha-800: rgba(233, 105, 108, 0.20);
+  --color-primary-alpha-900: rgba(233, 105, 108, 0.10);
+  --color-primary-dark-100: rgb(210,95,97);
+  --color-primary-dark-100-alpha-100: rgba(210, 95, 97, 0.90);
+  --color-primary-dark-100-alpha-200: rgba(210, 95, 97, 0.80);
+  --color-primary-dark-100-alpha-300: rgba(210, 95, 97, 0.70);
+  --color-primary-dark-100-alpha-400: rgba(210, 95, 97, 0.60);
+  --color-primary-dark-100-alpha-500: rgba(210, 95, 97, 0.50);
+  --color-primary-dark-100-alpha-600: rgba(210, 95, 97, 0.40);
+  --color-primary-dark-100-alpha-700: rgba(210, 95, 97, 0.30);
+  --color-primary-dark-100-alpha-800: rgba(210, 95, 97, 0.20);
+  --color-primary-dark-100-alpha-900: rgba(210, 95, 97, 0.10);
+  --color-primary-dark-200: rgb(189,86,87);
+  --color-primary-dark-200-alpha-100: rgba(189, 86, 87, 0.90);
+  --color-primary-dark-200-alpha-200: rgba(189, 86, 87, 0.80);
+  --color-primary-dark-200-alpha-300: rgba(189, 86, 87, 0.70);
+  --color-primary-dark-200-alpha-400: rgba(189, 86, 87, 0.60);
+  --color-primary-dark-200-alpha-500: rgba(189, 86, 87, 0.50);
+  --color-primary-dark-200-alpha-600: rgba(189, 86, 87, 0.40);
+  --color-primary-dark-200-alpha-700: rgba(189, 86, 87, 0.30);
+  --color-primary-dark-200-alpha-800: rgba(189, 86, 87, 0.20);
+  --color-primary-dark-200-alpha-900: rgba(189, 86, 87, 0.10);
+  --color-primary-dark-300: rgb(170,77,78);
+  --color-primary-dark-300-alpha-100: rgba(170, 77, 78, 0.90);
+  --color-primary-dark-300-alpha-200: rgba(170, 77, 78, 0.80);
+  --color-primary-dark-300-alpha-300: rgba(170, 77, 78, 0.70);
+  --color-primary-dark-300-alpha-400: rgba(170, 77, 78, 0.60);
+  --color-primary-dark-300-alpha-500: rgba(170, 77, 78, 0.50);
+  --color-primary-dark-300-alpha-600: rgba(170, 77, 78, 0.40);
+  --color-primary-dark-300-alpha-700: rgba(170, 77, 78, 0.30);
+  --color-primary-dark-300-alpha-800: rgba(170, 77, 78, 0.20);
+  --color-primary-dark-300-alpha-900: rgba(170, 77, 78, 0.10);
+  --color-primary-dark-400: rgb(153,69,70);
+  --color-primary-dark-400-alpha-100: rgba(153, 69, 70, 0.90);
+  --color-primary-dark-400-alpha-200: rgba(153, 69, 70, 0.80);
+  --color-primary-dark-400-alpha-300: rgba(153, 69, 70, 0.70);
+  --color-primary-dark-400-alpha-400: rgba(153, 69, 70, 0.60);
+  --color-primary-dark-400-alpha-500: rgba(153, 69, 70, 0.50);
+  --color-primary-dark-400-alpha-600: rgba(153, 69, 70, 0.40);
+  --color-primary-dark-400-alpha-700: rgba(153, 69, 70, 0.30);
+  --color-primary-dark-400-alpha-800: rgba(153, 69, 70, 0.20);
+  --color-primary-dark-400-alpha-900: rgba(153, 69, 70, 0.10);
+  --color-primary-dark-500: rgb(138,62,63);
+  --color-primary-dark-500-alpha-100: rgba(138, 62, 63, 0.90);
+  --color-primary-dark-500-alpha-200: rgba(138, 62, 63, 0.80);
+  --color-primary-dark-500-alpha-300: rgba(138, 62, 63, 0.70);
+  --color-primary-dark-500-alpha-400: rgba(138, 62, 63, 0.60);
+  --color-primary-dark-500-alpha-500: rgba(138, 62, 63, 0.50);
+  --color-primary-dark-500-alpha-600: rgba(138, 62, 63, 0.40);
+  --color-primary-dark-500-alpha-700: rgba(138, 62, 63, 0.30);
+  --color-primary-dark-500-alpha-800: rgba(138, 62, 63, 0.20);
+  --color-primary-dark-500-alpha-900: rgba(138, 62, 63, 0.10);
+  --color-primary-dark-600: rgb(124,56,57);
+  --color-primary-dark-600-alpha-100: rgba(124, 56, 57, 0.90);
+  --color-primary-dark-600-alpha-200: rgba(124, 56, 57, 0.80);
+  --color-primary-dark-600-alpha-300: rgba(124, 56, 57, 0.70);
+  --color-primary-dark-600-alpha-400: rgba(124, 56, 57, 0.60);
+  --color-primary-dark-600-alpha-500: rgba(124, 56, 57, 0.50);
+  --color-primary-dark-600-alpha-600: rgba(124, 56, 57, 0.40);
+  --color-primary-dark-600-alpha-700: rgba(124, 56, 57, 0.30);
+  --color-primary-dark-600-alpha-800: rgba(124, 56, 57, 0.20);
+  --color-primary-dark-600-alpha-900: rgba(124, 56, 57, 0.10);
+  --color-primary-dark-700: rgb(112,50,51);
+  --color-primary-dark-700-alpha-100: rgba(112, 50, 51, 0.90);
+  --color-primary-dark-700-alpha-200: rgba(112, 50, 51, 0.80);
+  --color-primary-dark-700-alpha-300: rgba(112, 50, 51, 0.70);
+  --color-primary-dark-700-alpha-400: rgba(112, 50, 51, 0.60);
+  --color-primary-dark-700-alpha-500: rgba(112, 50, 51, 0.50);
+  --color-primary-dark-700-alpha-600: rgba(112, 50, 51, 0.40);
+  --color-primary-dark-700-alpha-700: rgba(112, 50, 51, 0.30);
+  --color-primary-dark-700-alpha-800: rgba(112, 50, 51, 0.20);
+  --color-primary-dark-700-alpha-900: rgba(112, 50, 51, 0.10);
+  --color-primary-dark-800: rgb(101,45,46);
+  --color-primary-dark-800-alpha-100: rgba(101, 45, 46, 0.90);
+  --color-primary-dark-800-alpha-200: rgba(101, 45, 46, 0.80);
+  --color-primary-dark-800-alpha-300: rgba(101, 45, 46, 0.70);
+  --color-primary-dark-800-alpha-400: rgba(101, 45, 46, 0.60);
+  --color-primary-dark-800-alpha-500: rgba(101, 45, 46, 0.50);
+  --color-primary-dark-800-alpha-600: rgba(101, 45, 46, 0.40);
+  --color-primary-dark-800-alpha-700: rgba(101, 45, 46, 0.30);
+  --color-primary-dark-800-alpha-800: rgba(101, 45, 46, 0.20);
+  --color-primary-dark-800-alpha-900: rgba(101, 45, 46, 0.10);
+  --color-primary-dark-900: rgb(91,41,41);
+  --color-primary-dark-900-alpha-100: rgba(91, 41, 41, 0.90);
+  --color-primary-dark-900-alpha-200: rgba(91, 41, 41, 0.80);
+  --color-primary-dark-900-alpha-300: rgba(91, 41, 41, 0.70);
+  --color-primary-dark-900-alpha-400: rgba(91, 41, 41, 0.60);
+  --color-primary-dark-900-alpha-500: rgba(91, 41, 41, 0.50);
+  --color-primary-dark-900-alpha-600: rgba(91, 41, 41, 0.40);
+  --color-primary-dark-900-alpha-700: rgba(91, 41, 41, 0.30);
+  --color-primary-dark-900-alpha-800: rgba(91, 41, 41, 0.20);
+  --color-primary-dark-900-alpha-900: rgba(91, 41, 41, 0.10);
+  --color-primary-dark-1000: rgb(82,37,37);
+  --color-primary-dark-1000-alpha-100: rgba(82, 37, 37, 0.90);
+  --color-primary-dark-1000-alpha-200: rgba(82, 37, 37, 0.80);
+  --color-primary-dark-1000-alpha-300: rgba(82, 37, 37, 0.70);
+  --color-primary-dark-1000-alpha-400: rgba(82, 37, 37, 0.60);
+  --color-primary-dark-1000-alpha-500: rgba(82, 37, 37, 0.50);
+  --color-primary-dark-1000-alpha-600: rgba(82, 37, 37, 0.40);
+  --color-primary-dark-1000-alpha-700: rgba(82, 37, 37, 0.30);
+  --color-primary-dark-1000-alpha-800: rgba(82, 37, 37, 0.20);
+  --color-primary-dark-1000-alpha-900: rgba(82, 37, 37, 0.10);
+  --color-primary-light-100: rgb(237,135,137);
+  --color-primary-light-100-alpha-100: rgba(237, 135, 137, 0.90);
+  --color-primary-light-100-alpha-200: rgba(237, 135, 137, 0.80);
+  --color-primary-light-100-alpha-300: rgba(237, 135, 137, 0.70);
+  --color-primary-light-100-alpha-400: rgba(237, 135, 137, 0.60);
+  --color-primary-light-100-alpha-500: rgba(237, 135, 137, 0.50);
+  --color-primary-light-100-alpha-600: rgba(237, 135, 137, 0.40);
+  --color-primary-light-100-alpha-700: rgba(237, 135, 137, 0.30);
+  --color-primary-light-100-alpha-800: rgba(237, 135, 137, 0.20);
+  --color-primary-light-100-alpha-900: rgba(237, 135, 137, 0.10);
+  --color-primary-light-200: rgb(241,159,161);
+  --color-primary-light-200-alpha-100: rgba(241, 159, 161, 0.90);
+  --color-primary-light-200-alpha-200: rgba(241, 159, 161, 0.80);
+  --color-primary-light-200-alpha-300: rgba(241, 159, 161, 0.70);
+  --color-primary-light-200-alpha-400: rgba(241, 159, 161, 0.60);
+  --color-primary-light-200-alpha-500: rgba(241, 159, 161, 0.50);
+  --color-primary-light-200-alpha-600: rgba(241, 159, 161, 0.40);
+  --color-primary-light-200-alpha-700: rgba(241, 159, 161, 0.30);
+  --color-primary-light-200-alpha-800: rgba(241, 159, 161, 0.20);
+  --color-primary-light-200-alpha-900: rgba(241, 159, 161, 0.10);
+  --color-primary-light-300: rgb(244,178,180);
+  --color-primary-light-300-alpha-100: rgba(244, 178, 180, 0.90);
+  --color-primary-light-300-alpha-200: rgba(244, 178, 180, 0.80);
+  --color-primary-light-300-alpha-300: rgba(244, 178, 180, 0.70);
+  --color-primary-light-300-alpha-400: rgba(244, 178, 180, 0.60);
+  --color-primary-light-300-alpha-500: rgba(244, 178, 180, 0.50);
+  --color-primary-light-300-alpha-600: rgba(244, 178, 180, 0.40);
+  --color-primary-light-300-alpha-700: rgba(244, 178, 180, 0.30);
+  --color-primary-light-300-alpha-800: rgba(244, 178, 180, 0.20);
+  --color-primary-light-300-alpha-900: rgba(244, 178, 180, 0.10);
+  --color-primary-light-400: rgb(246,193,195);
+  --color-primary-light-400-alpha-100: rgba(246, 193, 195, 0.90);
+  --color-primary-light-400-alpha-200: rgba(246, 193, 195, 0.80);
+  --color-primary-light-400-alpha-300: rgba(246, 193, 195, 0.70);
+  --color-primary-light-400-alpha-400: rgba(246, 193, 195, 0.60);
+  --color-primary-light-400-alpha-500: rgba(246, 193, 195, 0.50);
+  --color-primary-light-400-alpha-600: rgba(246, 193, 195, 0.40);
+  --color-primary-light-400-alpha-700: rgba(246, 193, 195, 0.30);
+  --color-primary-light-400-alpha-800: rgba(246, 193, 195, 0.20);
+  --color-primary-light-400-alpha-900: rgba(246, 193, 195, 0.10);
+  --color-primary-light-500: rgb(248,205,207);
+  --color-primary-light-500-alpha-100: rgba(248, 205, 207, 0.90);
+  --color-primary-light-500-alpha-200: rgba(248, 205, 207, 0.80);
+  --color-primary-light-500-alpha-300: rgba(248, 205, 207, 0.70);
+  --color-primary-light-500-alpha-400: rgba(248, 205, 207, 0.60);
+  --color-primary-light-500-alpha-500: rgba(248, 205, 207, 0.50);
+  --color-primary-light-500-alpha-600: rgba(248, 205, 207, 0.40);
+  --color-primary-light-500-alpha-700: rgba(248, 205, 207, 0.30);
+  --color-primary-light-500-alpha-800: rgba(248, 205, 207, 0.20);
+  --color-primary-light-500-alpha-900: rgba(248, 205, 207, 0.10);
+  --color-primary-light-600: rgb(249,215,217);
+  --color-primary-light-600-alpha-100: rgba(249, 215, 217, 0.90);
+  --color-primary-light-600-alpha-200: rgba(249, 215, 217, 0.80);
+  --color-primary-light-600-alpha-300: rgba(249, 215, 217, 0.70);
+  --color-primary-light-600-alpha-400: rgba(249, 215, 217, 0.60);
+  --color-primary-light-600-alpha-500: rgba(249, 215, 217, 0.50);
+  --color-primary-light-600-alpha-600: rgba(249, 215, 217, 0.40);
+  --color-primary-light-600-alpha-700: rgba(249, 215, 217, 0.30);
+  --color-primary-light-600-alpha-800: rgba(249, 215, 217, 0.20);
+  --color-primary-light-600-alpha-900: rgba(249, 215, 217, 0.10);
+  --color-primary-light-700: rgb(218,238,228);
+  --color-primary-light-700-alpha-100: rgba(218, 238, 228, 0.90);
+  --color-primary-light-700-alpha-200: rgba(218, 238, 228, 0.80);
+  --color-primary-light-700-alpha-300: rgba(218, 238, 228, 0.70);
+  --color-primary-light-700-alpha-400: rgba(218, 238, 228, 0.60);
+  --color-primary-light-700-alpha-500: rgba(218, 238, 228, 0.50);
+  --color-primary-light-700-alpha-600: rgba(218, 238, 228, 0.40);
+  --color-primary-light-700-alpha-700: rgba(218, 238, 228, 0.30);
+  --color-primary-light-700-alpha-800: rgba(218, 238, 228, 0.20);
+  --color-primary-light-700-alpha-900: rgba(218, 238, 228, 0.10);
+  --color-primary-light-800: rgb(225,241,233);
+  --color-primary-light-800-alpha-100: rgba(225, 241, 233, 0.90);
+  --color-primary-light-800-alpha-200: rgba(225, 241, 233, 0.80);
+  --color-primary-light-800-alpha-300: rgba(225, 241, 233, 0.70);
+  --color-primary-light-800-alpha-400: rgba(225, 241, 233, 0.60);
+  --color-primary-light-800-alpha-500: rgba(225, 241, 233, 0.50);
+  --color-primary-light-800-alpha-600: rgba(225, 241, 233, 0.40);
+  --color-primary-light-800-alpha-700: rgba(225, 241, 233, 0.30);
+  --color-primary-light-800-alpha-800: rgba(225, 241, 233, 0.20);
+  --color-primary-light-800-alpha-900: rgba(225, 241, 233, 0.10);
+  --color-primary-light-900: rgb(231,244,237);
+  --color-primary-light-900-alpha-100: rgba(231, 244, 237, 0.90);
+  --color-primary-light-900-alpha-200: rgba(231, 244, 237, 0.80);
+  --color-primary-light-900-alpha-300: rgba(231, 244, 237, 0.70);
+  --color-primary-light-900-alpha-400: rgba(231, 244, 237, 0.60);
+  --color-primary-light-900-alpha-500: rgba(231, 244, 237, 0.50);
+  --color-primary-light-900-alpha-600: rgba(231, 244, 237, 0.40);
+  --color-primary-light-900-alpha-700: rgba(231, 244, 237, 0.30);
+  --color-primary-light-900-alpha-800: rgba(231, 244, 237, 0.20);
+  --color-primary-light-900-alpha-900: rgba(231, 244, 237, 0.10);
+  --color-primary-light-1000: rgb(255,255,255);
+  --color-primary-light-1000-alpha-100: rgba(255, 255, 255, 0.90);
+  --color-primary-light-1000-alpha-200: rgba(255, 255, 255, 0.80);
+  --color-primary-light-1000-alpha-300: rgba(255, 255, 255, 0.70);
+  --color-primary-light-1000-alpha-400: rgba(255, 255, 255, 0.60);
+  --color-primary-light-1000-alpha-500: rgba(255, 255, 255, 0.50);
+  --color-primary-light-1000-alpha-600: rgba(255, 255, 255, 0.40);
+  --color-primary-light-1000-alpha-700: rgba(255, 255, 255, 0.30);
+  --color-primary-light-1000-alpha-800: rgba(255, 255, 255, 0.20);
+  --color-primary-light-1000-alpha-900: rgba(255, 255, 255, 0.10);
+  --color-theme: rgb(233, 105, 108);
+  // --color-scrollbar-track:
+
+  // --color-900: #fff;
+  // --color-800: #fafafa;
+  // --color-700: #f5f5f5;
+  // --color-600: #eeeeee;
+  // --color-500: #e0e0e0;
+  // --color-400: #bdbdbd;
+  // --color-300: #9e9e9e;
+  // --color-200: #757575;
+  // --color-100: #616161;
+  // --color-050: #424242;
+  // --color-000: #212121;
+  // --color-000: #fff;
+  // --color-050: #fafafa;
+  // --color-100: #f5f5f5;
+  // --color-200: #eeeeee;
+  // --color-300: #e0e0e0;
+  // --color-400: #bdbdbd;
+  // --color-500: #9e9e9e;
+  // --color-600: #757575;
+  // --color-700: #616161;
+  // --color-800: #424242;
+  // --color-900: #212121;
+
+  --color-000: rgb(255,255,255);
+  --color-050: rgb(244,244,244);
+  --color-100: rgb(233,233,233);
+  --color-150: rgb(222,222,222);
+  --color-200: rgb(211,211,211);
+  --color-250: rgb(200,200,200);
+  --color-300: rgb(188,188,188);
+  --color-350: rgb(177,177,177);
+  --color-400: rgb(166,166,166);
+  --color-450: rgb(155,155,155);
+  --color-500: rgb(144,144,144);
+  --color-550: rgb(133,133,133);
+  --color-600: rgb(122,122,122);
+  --color-650: rgb(111,111,111);
+  --color-700: rgb(100,100,100);
+  --color-750: rgb(89,89,89);
+  --color-800: rgb(77,77,77);
+  --color-850: rgb(66,66,66);
+  --color-900: rgb(55,55,55);
+  --color-950: rgb(44,44,44);
+  --color-1000: rgb(33, 33, 33);
+
+  --color-app-background: var(--color-primary-light-600-alpha-600);
+  --color-main-background: rgba(255, 255, 255, 0.9);
+  --color-nav-font: var(--color-primary);
+  // --color-app-background: rgba(0, 0, 0, .5);
+  // --color-main-background: rgba(0, 0, 0, 0.26);
+  --color-btn-hide: #3bc2b2;
+  --color-btn-min: #85c43b;
+  // --color-btn-max: #e7aa36;
+  --color-btn-close: #fab4a0;
+
+  --color-badge-primary: var(--color-primary);
+  --color-badge-secondary: #4baed5;
+  --color-badge-tertiary: #e7aa36;
+
+  --color-font: var(--color-850);
+  --color-font-label: var(--color-450);
+  --color-primary-font: var(--color-primary);
+  --color-primary-font-hover: var(--color-primary-alpha-300);
+  --color-primary-font-active: var(--color-primary-dark-100-alpha-200);
+  --color-primary-background: var(--color-primary-light-400-alpha-700);
+  --color-primary-background-hover: var(--color-primary-light-300-alpha-800);
+  --color-primary-background-active: var(--color-primary-light-100-alpha-800);
+  --color-button-font: var(--color-primary-alpha-100);
+  --color-button-font-selected: var(--color-primary-dark-100-alpha-100);
+  --color-button-background: var(--color-primary-light-400-alpha-700);
+  --color-button-background-selected: var(--color-primary-alpha-600);
+  --color-button-background-hover: var(--color-primary-light-300-alpha-600);
+  --color-button-background-active: var(--color-primary-light-100-alpha-600);
+  --color-list-header-border-bottom: 1px solid var(--color-primary-alpha-900);
+  --color-content-background: var(--color-primary-light-1000);
+
+
+  --background-image: none;
+  --background-image-position: center;
+  --background-image-size: cover;
+}
+
+html {
+  font-size: 16px;
+}
+
+.nobreak {
+  white-space: nowrap;
+}
+
+.auto-hidden {
+  .mixin-ellipsis-1();
+}
+
+.center {
+  text-align: center;
+}
+
+.break {
+  word-break: break-all;
+}
+
+.select {
+  user-select: text;
+}
+.no-select {
+  user-select: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: .7em;
+  // font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  // vertical-align: baseline;
+  vertical-align: text-top;
+  // border-radius: 2px;
+
+  // &.badge-light {
+  //   background-color: #f8f9fa;
+  // }
+  // &.badge-secondary {
+  //   color: #fff;
+  //   background-color: #6c757d;
+  // }
+  // &.badge-info {
+  //   color: #fff;
+  //   background-color: #4baed5;
+  // }
+  // &.badge-warning {
+  //   color: #fff;
+  //   background-color: #ffa45a;
+  // }
+  // &.badge-danger {
+  //   color: #fff;
+  //   background-color: #ff705a;
+  // }
+  // &.badge-success {
+  //   color: #fff;
+  //   background-color: #32bc63;
+  // }
+  &.badge-theme-primary {
+    color: var(--color-badge-primary);
+  }
+  &.badge-theme-secondary {
+    color: var(--color-badge-secondary);
+  }
+  &.badge-theme-tertiary {
+    color: var(--color-badge-tertiary);
+  }
+}
+
+small {
+  font-size: .8em;
+}
+.small {
+  font-size: .9em;
+}
+.tip {
+  color: var(--color-label);
+}
+strong {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+svg {
+  transition: @transition-normal;
+  transition-property: fill;
+}
+
+button, input, textarea, a {
+  color: var(--color-font);
+}
+
+input, textarea {
+  &::placeholder {
+    color: var(--color-font-label);
+  }
+}
+::selection {
+  color: var(--color-primary-dark-500-alpha-200);
+  background: var(--color-primary-light-100-alpha-500);
+}
+
+.hover, a {
+  cursor: pointer;
+  transition: color .2s ease;
+  &:hover {
+    color: var(--color-primary-font-hover);
+  }
+  &:active {
+    color: var(--color-primary-font-active);
+  }
+}
+
+.scroll {
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-primary-light-100-alpha-800);
+    border-radius: 3px;
+    // background-color: rgba(0, 0, 0, 0.1);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--color-primary-alpha-600);
+    // background-color: rgba(0, 0, 0, 0.2);
+    transition: background-color 0.4s ease;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    border-radius: 3px;
+    background-color: var(--color-primary-alpha-400);
+    // background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.4s ease;
+  }
+}
+
+
+.thead {
+  border-bottom: var(--color-list-header-border-bottom);
+  padding-right: 6px;
+  flex: none;
+
+  .num {
+    .nobreak();
+    .center();
+    color: var(--color-font-label);
+  }
+  // box-shadow: 0 0 2px var(--color-primary-dark-500-alpha-800);
+  // position: relative;
+  // z-index: 2;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  overflow: hidden;
+  color: var(--color-font);
+  th {
+    font-size: 12px;
+    text-align: left;
+    line-height: 38px;
+    padding: 0 6px;
+  }
+}
+
+
+.list {
+  width: 100%;
+  overflow: hidden;
+  color: var(--color-font);
+  flex: auto;
+
+
+  .list-item {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    // border-top: 1px solid rgba(0, 0, 0, 0.12);
+    transition: 0.2s ease;
+    transition-property: background-color, color;
+    // border-bottom: 1px solid @color-theme_2-line;
+    box-sizing: border-box;
+    font-size: 12px;
+
+    &:hover {
+      background-color: var(--color-primary-background-hover);
+
+      // .list-item-cell-action {
+      //   display: block;
+      // }
+    }
+    &.active {
+      background-color: var(--color-primary-background-active);
+    }
+    &.selected {
+      background-color: var(--color-primary-background-hover);
+    }
+    &.disabled {
+      opacity: .5;
+    }
+    .list-item-cell {
+      flex: none;
+      padding: 0 6px;
+      position: relative;
+      // transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      line-height: 16px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      .mixin-ellipsis-1();
+
+      &.auto {
+        flex: auto;
+      }
+
+      &.num, .num {
+        .nobreak();
+        .center();
+        padding-left: 3px;
+        padding-right: 3px;
+        font-size: 11px;
+        color: var(--color-font-label);
+      }
+
+      &.name {
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: hidden;
+        white-space: initial;
+        text-overflow: initial;
+        align-items: center;
+
+        >.name {
+          .mixin-ellipsis-1();
+        }
+      }
+      .badge {
+        margin-left: 3px;
+        opacity: .85;
+      }
+    }
+
+    // .list-item-cell-action {
+    //   white-space: nowrap;
+    //   display: none;
+    //   flex: auto;
+    //   text-align: right;
+    //   // position: absolute;
+    //   // right: 5px;
+    //   // top: -2px;
+    //   // opacity: 0;
+    //   // transition: opacity .1s ease;
+    // }
+  }
+}
+
+.copying {
+  .no-select {
+    display: none !important;
+  }
+}
+
+.gap-left {
+  + .gap-left {
+    margin-left: 20px;
+  }
+}
+.gap-top {
+  &.top {
+    margin-top: 25px;
+  }
+
+  + .gap-top {
+    margin-top: 10px;
+  }
+}
+
+.color-picker {
+  border-radius: @radius-border !important;
+}
+
+.list-active-enter-active,
+.list-active-leave-active {
+  transition: .13s ease;
+  transition-property: width, opacity;
+}
+
+.list-active-enter-from,
+.list-active-leave-to {
+  width: 0.25em !important;
+  opacity: 0;
+}
+
+.play-active-enter-active,
+.play-active-leave-active {
+  transition: .13s ease;
+  transition-property: transform, opacity;
+}
+
+.play-active-enter-from,
+.play-active-leave-to {
+  transform: scale(0.3);
+  opacity: 0;
+}
+
+// ── 统一入场动效（错峰序列）──────────────────────────
+// 用法：给容器加 .view-enter，其直接子元素会自动错峰淡入上浮。
+@keyframes wensheng-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes wensheng-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.view-enter > * {
+  animation: wensheng-rise .42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.view-enter > *:nth-child(1) { animation-delay: 0ms; }
+.view-enter > *:nth-child(2) { animation-delay: 60ms; }
+.view-enter > *:nth-child(3) { animation-delay: 120ms; }
+.view-enter > *:nth-child(4) { animation-delay: 180ms; }
+.view-enter > *:nth-child(n+5) { animation-delay: 240ms; }
+
+// 通用淡入（卡片列表等）
+.fade-enter { animation: wensheng-fade .3s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .view-enter > *,
+  .fade-enter {
+    animation: none !important;
+  }
+}
